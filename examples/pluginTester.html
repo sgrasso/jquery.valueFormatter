@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Value Formatter</title>
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src = "jquery.valueFormatter.js"></script>	
+	</head>
+	<style>
+		#testInput{
+			font-size: 14px;
+		}
+	</style>
+	<body>
+		<h4>Value Formatter</h4>
+		<input id="testInput" type="text" name="testInput" title="Value Format Tester" />
+	</body>
+	
+	<script>
+		(function($){
+
+			$('#testInput').valueFormatter('currency','$--.--');
+			
+		})(jQuery);
+	</script>
+</html>
+
