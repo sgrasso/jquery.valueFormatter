@@ -9,14 +9,14 @@
 
 (function($){
 
-    $.fn.initialValue = function(value) {
+	//Private Functions
+	function initialValue(e,value) {
 		if (value) {
-		  return this.attr('inputValue', value);
+		  return $(e).attr('inputValue', value);
 		} else {
-		  return this.attr('inputValue');
+		  return $(e).attr('inputValue');
 		}
 	  };
-	//Private Functions
 	function validateInput(testValue){
 			testValue = testValue.replace(/[\s]/g,"");
 			testValue = testValue.replace(/[0-9]*\.?[0-9]{1,2}/,"");
@@ -28,15 +28,15 @@
 		percent: function(){
 			return this
 			  .focus(function(){
-				$(this).initialValue(this.value);
-				if (this.value == $(this).initialValue()) {
+				initialValue(this,this.value);
+				if (this.value == initialValue(this)) {
 				  this.value = '';
 				}
 			  })
 			  .blur(function(){
-				$(this).initialValue(this.value);
+				initialValue(this,this.value)
 				if (this.value == '') {
-				  this.value = $(this).initialValue();
+				  this.value = initialValue(this);
 				}			
 				if (validateInput(this.value) != '') {
 						this.value = '--%';
@@ -52,15 +52,15 @@
 		currency: function(){
 			return this
 			  .focus(function(){
-			  $(this).initialValue(this.value);
-				if (this.value == $(this).initialValue()) {
+			  initialValue(this,this.value);
+				if (this.value == initialValue(this)) {
 				  this.value = '';
 				}
 			  })
 			  .blur(function(){
-			  $(this).initialValue(this.value);
+				initialValue(this,this.value);
 				if (this.value == '') {
-				  this.value = $(this).initialValue();
+				  this.value = initialValue(this);
 				}				
 				if (validateInput(this.value) != '') {
 					this.value = '$--.--';
