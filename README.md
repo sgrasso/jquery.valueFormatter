@@ -16,7 +16,8 @@ Customizing
 -----------
 
 Adding your own types of value masking is simple and straight forward. The following methods object contains formatting and masking options.
-<code>	var methods = {
+<pre><code>
+	var methods = {
   		
 		percent: function(){
 			return this
@@ -68,7 +69,7 @@ Adding your own types of value masking is simple and straight forward. The follo
 				});
 			}
 		}
-</code>
+</code></pre>
 
 When in need of a different format or masking simply add another method to the object.
 
