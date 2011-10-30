@@ -16,8 +16,7 @@ Customizing
 -----------
 
 Adding your own types of value masking is simple and straight forward. The following methods object contains formatting and masking options.
-</code>
-	var methods = {
+<code>	var methods = {
   		
 		percent: function(){
 			return this
